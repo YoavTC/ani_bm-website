@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collections - BrandName Clothing</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="collections.css">
+    <link rel="icon" type="image/x-icon" href="communityIcon_b0xme7miz6af1.webp">
+</head>
+<body>
+    <header class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Ani BaMetziut Merch Store</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="collections.html">קולקציות</a></li>
+                    <li><a href="index.html#about">מי אנחנו</a></li>
+                    <li><a href="index.html#contact">צרו קשר</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="collections-grid container">
+        <div class="collection-item">
+            <div class="item-image">
+                <img src="assets/shirt_black.jpeg" alt="Black Shirt">
+            </div>
+            <div class="item-info">
+                <h3>חולצת איכס לעז שחורה</h3>
+                <p class="price">₪79.99</p>
+                <ul class="features">
+                    <li>100% Organic Cotton</li>
+                    <li>Machine Washable</li>
+                    <li>Available in S-XXL</li>
+                    <li>Breathable Fabric</li>
+                </ul>
+                <button class="btn add-to-cart">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="collection-item">
+            <div class="item-image">
+                <img id="phone-case-img" src="assets/phone_case.jpeg" alt="Phone Case">
+            </div>
+            <div class="item-info">
+                <h3>כיסוי טלפון עצמונים של הנשמה \ איכס לעז</h3>
+                <p class="price">₪24.99</p>
+                <ul class="features">
+                    <li>Shock-Resistant</li>
+                    <li>Wireless Charging Compatible</li>
+                    <li>Multiple Models Available</li>
+                    <li>Scratch-Proof Surface</li>
+                </ul>
+                <button class="btn add-to-cart">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="collection-item">
+            <div class="item-image">
+                <img src="assets/boxers.jpeg" alt="Boxers">
+            </div>
+            <div class="item-info">
+                <h3>בוקסר סקסיים</h3>
+                <p class="price">₪19.99</p>
+                <ul class="features">
+                    <li>Bamboo Fiber Blend</li>
+                    <li>Moisture-Wicking</li>
+                    <li>Tag-Free Comfort</li>
+                    <li>4-Way Stretch</li>
+                </ul>
+                <button onclick="window.location.href='https://www.youtube.com/watch?v=aaT3yrI3BuY'" class="btn sus">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="collection-item">
+            <div class="item-image">
+                <img src="assets/candle.jpeg" alt="Candle">
+            </div>
+            <div class="item-info">
+                <h3>נר ריחני בניחוח זיעה של בתול</h3>
+                <p class="price">₪34.99</p>
+                <ul class="features">
+                    <li>Natural Soy Wax</li>
+                    <li>40-Hour Burn Time</li>
+                    <li>Premium Glass Container</li>
+                    <li>Signature Fragrance</li>
+                </ul>
+                <button class="btn add-to-cart">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="collection-item">
+            <div class="item-image">
+                <img src="assets/notebook.jpeg" alt="Notebook">
+            </div>
+            <div class="item-info">
+                <h3>מחברת לימודים</h3>
+                <p class="price">₪69.99</p>
+                <ul class="features">
+                    <li>120 Pages</li>
+                    <li>Dotted Grid Layout</li>
+                    <li>Hardcover Design</li>
+                    <li>Elastic Band Closure</li>
+                </ul>
+                <button class="btn add-to-cart">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="collection-item">
+            <div class="item-image">
+                <img src="assets/bed.jpeg" alt="Bedding">
+            </div>
+            <div class="item-info">
+                <h3>כיסוי מיטה חושניים</h3>
+                <p class="price">₪129.99</p>
+                <ul class="features">
+                    <li>Egyptian Cotton</li>
+                    <li>Thread Count: 800</li>
+                    <li>Complete Set (Sheet, Pillowcases)</li>
+                    <li>Machine Washable</li>
+                </ul>
+                <button class="btn add-to-cart">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Ani BaMetziut. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Centralized cart URL
+        const CART_URL = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
+        
+        // Phone case image rotation
+        const phoneCaseImg = document.getElementById('phone-case-img');
+        const images = ['assets/phone_case.jpeg', 'assets/phone_case_black.jpeg'];
+        let currentImageIndex = 0;
+
+        setInterval(() => {
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            phoneCaseImg.src = images[currentImageIndex];
+        }, 3000); // Change every 3 seconds
+
+        // Add to cart functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const addToCartButtons = document.querySelectorAll('.add-to-cart');
+            addToCartButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    window.location.href = CART_URL;
+                });
+            });
+        });
+    </script>
+</body>
+</html>
