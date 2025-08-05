@@ -146,6 +146,7 @@
     <script>
         // Centralized cart URL
         const CART_URL = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
+        const CART_URL2 = "https://www.youtube.com/watch?v=11GKqZPi41s";
         
         // Phone case image rotation
         const phoneCaseImg = document.getElementById('phone-case-img');
@@ -158,11 +159,17 @@
         }, 3000); // Change every 3 seconds
 
         // Add to cart functionality
+        function getRandomCartURL() {
+            const cartURLs = [CART_URL, CART_URL2];
+            const randomIndex = Math.floor(Math.random() * cartURLs.length);
+            return cartURLs[randomIndex];
+        }
+
         document.addEventListener('DOMContentLoaded', function() {
             const addToCartButtons = document.querySelectorAll('.add-to-cart');
             addToCartButtons.forEach(button => {
                 button.addEventListener('click', function() {
-                    window.location.href = CART_URL;
+                    window.location.href = getRandomCartURL();
                 });
             });
         });
